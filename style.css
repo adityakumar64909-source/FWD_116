@@ -30,3 +30,36 @@
 .sih-symbol b{position:absolute;right:16px;top:18px;font-size:25px;color:#8aa995}
 @media(max-width:760px){.sih-card{padding:32px 25px;min-height:0}.sih-symbol{width:95px;height:95px;flex-basis:95px;margin-left:12px}.sih-symbol:before{inset:9px}.sih-symbol:after{inset:-8px}.sih-symbol span{font-size:25px}.sih-symbol b{font-size:16px;right:7px;top:8px}.sih-content h2{font-size:34px}.sih-content>p:not(.eyebrow){font-size:12px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+/* Refined layout and gentle interactions */
+:focus-visible{outline:3px solid #80a995;outline-offset:4px}
+::selection{background:#cfe0d4;color:#183b2f}
+.site-header{position:sticky;top:0;z-index:20;background:rgba(247,248,245,.94);backdrop-filter:blur(14px)}
+.nav a{position:relative;padding:8px 0}
+.nav a:after{content:"";position:absolute;left:0;bottom:1px;width:0;height:1px;background:var(--accent);transition:width .25s}
+.nav a:hover:after,.nav a.active:after{width:100%}
+.photo-placeholder{border:1px solid #dce5dd;box-shadow:18px 18px 0 #edf1ed}
+.quick-facts{padding-top:20px;border-top:1px solid var(--line);max-width:430px}
+.feature-card{border-left:3px solid var(--accent)}
+.project-card{overflow:hidden;box-shadow:0 14px 40px #20352b08}
+.project-art{background:radial-gradient(circle at 50% 50%,#f9fbf8 0%,#e8efe9 68%)}
+.project-details{background:#fff}
+.project-overview{padding:65px 0 10px}
+.project-overview h2{font:700 clamp(27px,4vw,38px)/1.2 Manrope;letter-spacing:-1.5px;max-width:650px;margin:0}
+.overview-copy{max-width:650px;color:var(--muted);font-size:15px;line-height:1.85}
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+.feature-grid>div{padding:22px;background:#edf2ed;border:1px solid #e0e8e1}
+.feature-grid span{font-size:10px;color:var(--accent);font-weight:700;letter-spacing:1px}
+.feature-grid h3{font:700 16px Manrope;margin:15px 0 7px}
+.feature-grid p{font-size:12px;color:var(--muted);margin:0;line-height:1.7}
+.small-disclaimer{font-size:10px;color:#849087;margin-top:15px}
+.skill-card{border-radius:5px;box-shadow:0 8px 24px #20352b06}
+.skill-icon{width:52px;height:52px;display:grid;place-items:center;background:#edf3ee;border-radius:50%}
+.contact-form{box-shadow:0 12px 35px #20352b08}
+.back-to-top{position:fixed;right:24px;bottom:24px;width:42px;height:42px;border:0;border-radius:50%;background:var(--accent);color:white;font-size:21px;cursor:pointer;opacity:0;pointer-events:none;transform:translateY(10px);transition:.25s;z-index:30;box-shadow:0 8px 20px #163c2b25}
+.back-to-top.show{opacity:1;pointer-events:auto;transform:translateY(0)}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
+.reveal.is-visible{opacity:1;transform:translateY(0)}
+.footer{background:#f1f4f0}
+@media(max-width:760px){.feature-grid{grid-template-columns:1fr}.project-overview{padding-top:45px}.quick-facts{max-width:none}.back-to-top{right:16px;bottom:16px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
